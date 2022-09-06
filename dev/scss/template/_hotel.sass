@@ -1,0 +1,210 @@
+$hotel-text: #1A212F
+
+.section-hotel
+  position: relative
+  &__img
+    position: absolute
+    top: 25px
+    left: 0
+  &__hotel-number
+    padding: 0 0 140px 0
+
+.hotel-number
+  &__title
+    margin-bottom: 70px
+    @include font(36px, bold, 'Rubik')
+    text-align: center
+    color: $hotel-text
+  &__slider-container
+    position: relative
+  &__slider-nav
+    margin-left: auto
+    margin-top: 55px
+
+.slider-container
+  &__wrap
+    position: absolute
+    left: 0
+    top: 0
+    opacity: 0
+    transition: all 0.5s linear
+    &--active
+      position: static
+      opacity: 1
+  &__slide-hotel
+    position: relative
+    padding-left: 70px
+
+.slide-hotel
+  max-width: 1030px
+  &__img
+    border-radius: 10px
+  &__card-specifications
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 2
+    padding: 40px 117px 40px 100px
+    transform: translate(120%, 15%)
+
+.card-specifications
+  max-width: 500px
+  background: #FFFFFF
+  box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25)
+  border-radius: 8px
+  &__title
+    margin-bottom: 30px
+    @include font(22px, 500, 'Rubik')
+    color: $hotel-text
+  &__btn
+    align-items: center
+    max-width: 205px
+    padding: 7px 7px 7px 30px
+    @include font(16px, 600)
+    border-radius: 25px
+    color: #FFFEFD
+    background: #FF7236
+    transition: background-color 0.2s linear
+    & span
+      margin-right: 20px
+    &:hover
+      @media (min-width: 992px)
+        background-color: darken(#FF7236, 5%)
+
+.list-specification
+  padding-left: 20px
+  list-style: url('./../img/hotel/list-icon.svg')
+  &__item
+    margin-bottom: 20px
+    @include font(16px, normal)
+    color: $hotel-text
+    &--mb
+      margin-bottom: 30px
+
+
+.slider-nav
+  align-items: center
+  justify-content: space-between
+  max-width: 600px
+  &__slide-btn
+    margin-right: 75px
+
+.dots
+  &__btn
+    width: 12px
+    height: 12px
+    margin-right: 12px
+    border-radius: 50%
+    background: #E1E1E1
+    &--active
+      background: #FAC663
+
+.prev-btn, .next-btn
+  align-items: center
+  justify-content: center
+  max-width: 36px
+  max-height: 36px
+  padding: 15px
+  background: #FFFFFF
+  box-shadow: 0 2px 12px rgba(173, 152, 143, 0.25)
+  border-radius: 50%
+  &__img
+    width: 100%
+
+.prev-btn
+  margin-right: 10px
+
+.next-btn
+  transform: rotate(180deg)
+
+
+@media (max-width: 1200px)
+  .slide-hotel
+    &__card-specifications
+      transform: translate(90%, 15%)
+
+  .slider-nav
+    &__slide-btn
+      margin-right: 15px
+
+@media (max-width: 992px)
+  .section-hotel
+    &__img
+      max-width: 400px
+      top: 50px
+    &__hotel-number
+      padding: 0 0 120px 0
+
+  .card-specifications
+    &__title
+      margin-bottom: 25px
+      font-size: 20px
+
+  .list-specification
+    &__item
+      margin-bottom: 15px
+      font-size: 15px
+      &--mb
+        margin-bottom: 30px
+
+  .slider-container
+    &__slide-hotel
+      padding-left: 0
+
+  .slide-hotel
+    &__img
+      max-width: 515px
+    &__card-specifications
+      padding: 40px
+      transform: translate(115%, 10%)
+
+  .slider-nav
+    justify-content: center
+    max-width: initial
+    &__slide-btn
+      display: none
+
+@media (max-width: 768px)
+  .slide-hotel
+    &__img
+      max-width: 440px
+    &__card-specifications
+      padding: 30px
+      transform: translate(75%, 5%)
+
+@media (max-width: 576px)
+  .section-hotel
+    &__img
+      max-width: 250px
+      top: 30px
+    &__hotel-number
+      padding: 0 0 70px 0
+
+  .hotel-number
+    &__title
+      margin-bottom: 40px
+      font-size: 28px
+
+  .slide-hotel
+    flex-direction: column
+
+  .slide-hotel
+    &__img
+      width: 100%
+      max-width: inherit
+      border-radius: 10px 10px 0 0
+    &__card-specifications
+      position: static
+      padding: 25px
+      transform: translate(0, 0)
+
+  .card-specifications
+    border-radius: 0 0 8px 8px
+    &__btn
+      margin: 0 auto
+
+  .hotel-number
+    &__slider-nav
+      margin-top: 30px
+
+

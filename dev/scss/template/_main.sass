@@ -1,0 +1,320 @@
+$main-text: #1A212F
+
+.main
+  margin-bottom: 130px
+  &__main-header
+    margin-top: 70px
+    margin-bottom: 50px
+  &__filter
+    margin-right: 90px
+
+
+.main-header
+  align-items: center
+  justify-content: space-between
+  &__title
+    @include font(36px, bold, Rubik)
+    color: $main-text
+
+
+.filter-search
+  &__btn
+    @media (min-width: 993px)
+      display: none
+    align-items: center
+    margin-right: 30px
+    padding: 13px 20px
+    @include font(14px, 600)
+    background: #FFFFFF
+    box-shadow: 0 2px 12px rgba(173, 152, 143, 0.18)
+    border-radius: 25px
+    color: $main-text
+    &-img
+      margin-right: 10px
+
+
+.sort-cards
+  &__current-filter
+    padding: 13px 20px
+
+.current-filter
+  align-items: center
+  width: 174px
+  @include font(14px, normal)
+  background: #FFFFFF
+  box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18)
+  border-radius: 25px
+  color: $main-text
+  transition: border-radius 0.1s linear
+  cursor: pointer
+  &__text
+    margin: 0 auto 0 5px
+  &--active
+    border-radius: 0
+
+.current-filter--active .current-filter__btn-img--rightSize
+  transform: rotate(180deg)
+
+
+.main-header
+  &__sort-cards
+    position: relative
+
+.sort-cards
+  &__all-filter
+    position: absolute
+    top: 100%
+    left: 0
+    padding: 12px 20px
+
+.all-filter
+  background: #FFFFFF
+  box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18)
+  border-radius: 4px
+  opacity: 0
+  visibility: hidden
+  transition: all 0.1s linear
+  &__value
+    align-items: center
+    width: 134px
+    margin-bottom: 20px
+    cursor: pointer
+    &:last-of-type
+      margin-bottom: 0
+    &-img
+      width: 5px
+      height: 10px
+      margin-right: 5px
+      &--down
+        transform: rotate(180deg)
+    &-text
+      @include font(14px, normal)
+  &--active
+    box-shadow: none
+    opacity: 1
+    visibility: visible
+
+
+.main-content
+  flex-wrap: wrap
+  max-width: 870px
+  &__card-room
+    margin-right: 30px
+    margin-bottom: 30px
+    &--mr
+      margin-right: 0 !important
+
+.card-room
+  width: 270px
+  height: max-content
+  border: 1px solid #E1E1E1
+  box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25)
+  border-radius: 6px
+  background: #FFFFFF
+  overflow: hidden
+  &__img
+    margin-bottom: 25px
+  &__title
+    margin-left: 20px
+    margin-bottom: 20px
+    @include font(20px, 500, Rubik)
+    color: $main-text
+  &__size, &__area, &__room-equipment, &__price
+    margin-left: 20px
+    margin-bottom: 15px
+    @include font(14px, normal)
+    color: $main-text
+  &__room-equipment
+    align-items: center
+  &__price span
+    margin-left: 10px
+    @include font(18px, 500)
+  &__btn
+    align-items: center
+    justify-content: center
+    max-width: 230px
+    margin: 0 auto 25px
+    padding: 6px 6px 6px 52px
+    @include font(14px, 600)
+    border-radius: 25px
+    background: #FF7236
+    color: #FFFEFD
+  &__btn-img
+    padding-left: 40px
+
+
+.room-equipment
+  &__text
+    margin-right: 12px
+  &__empty-number, &__sunbed, &__scratching-post, &__game-complex, &__home
+    position: relative
+    margin-right: 8px
+
+.empty-number, .sunbed, .scratching-post, .game-complex, .home
+  &__text
+    position: absolute
+    left: -35px
+    top: -55px
+    padding: 10px
+    border: 1px solid #FAC663
+    box-shadow: 0px 4px 12px rgba(173, 152, 143, 0.18)
+    border-radius: 4px
+    background: #FFFEFD
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.2s ease-in-out
+    &:before, &:after
+      content: ''
+      position: absolute
+      left: 30%
+      bottom: -20px
+      display: block
+      width: 0
+      height: 0
+      border: 10px solid transparent
+      border-top: 10px solid #FAC663
+    &:after
+      bottom: -18.5px
+      border-top: 10px solid white
+  &__img
+    &:hover
+      cursor: pointer
+    &:hover + .empty-number, &:hover + .sunbed, &:hover + .scratching-post, &:hover + .game-complex, &:hover + .home
+      &__text
+        opacity: 1
+        visibility: visible
+
+.sunbed
+  &__text
+    left: -18px
+    &:before, &:after
+      left: 25%
+
+.scratching-post
+  &__text
+    &:before, &:after
+      left: 34%
+
+.game-complex
+  &__text
+    left: -90px
+    &:before, &:after
+      left: 60%
+
+.home
+  &__text
+    left: -35px
+    &:before, &:after
+      left: 49%
+
+
+@media (max-width: 1200px)
+  .main
+    &__filter
+      margin-right: 80px
+
+  .card-room
+    width: 320px
+    &__title, &__size, &__area, &__room-equipment, &__price
+      margin-left: 25px
+    &__btn
+      max-width: 270px
+      padding: 6px 6px 6px 75px
+    &__btn-img
+      padding-left: 60px
+
+  .main-content
+    max-width: 670px
+
+@media (max-width: 992px)
+  .main
+    margin-bottom: 120px
+    &__main-header
+      margin-top: 60px
+    &__filter
+      margin-right: 0
+
+  .main-content
+    max-width: inherit
+    justify-content: center
+    &__card-room
+      margin-right: 50px
+
+@media (max-width: 768px)
+  .main-content
+    &__card-room
+      margin-right: 30px
+
+  .filter-search
+    &__btn
+      margin-right: 10px
+
+  .sort-cards
+    &__btn
+      & span
+        margin-right: 20px
+
+  .card-room
+    width: 270px
+    &__btn
+      max-width: 230px
+      padding: 6px 6px 6px 52px
+    &__btn-img
+      padding-left: 40px
+
+@media (max-width: 576px)
+  .main
+    margin-bottom: 70px
+    &__main-header
+      margin: 40px 0 30px 0
+    &-header
+      flex-direction: column
+      &__title
+        width: 320px
+        margin-bottom: 40px
+        font-size: 28px
+        text-align: left
+    &-content
+      &__card-room
+        margin-right: 0
+
+  .filter-search
+    &__btn
+      margin-right: 25px
+      padding: 13px 15px
+
+  .sort-cards
+    &__current-filter
+      width: 154px
+      padding: 13px 15px
+    &__all-filter
+      width: 154px
+      padding: 13px 15px
+
+  .card-room
+    width: 320px
+    &__btn
+      max-width: 270px
+      padding: 6px 6px 6px 75px
+    &__btn-img
+      padding-left: 60px
+
+@media (max-width: 450px)
+  .main
+    &__filter
+      height: 98%
+      overflow-y: scroll
+
+@media (max-width: 320px)
+  .main
+    &-header
+      &__title
+        width: 100%
+
+  .card-room
+    width: 290px
+    &__btn
+      max-width: 240px
+      padding: 6px 6px 6px 59px
+    &__btn-img
+      padding-left: 43px

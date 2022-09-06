@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animal hotel - Catalog</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__header-top header-top">
+            <div class="container">
+                <div class="header-top__wrap d-flex">
+                    <a class="header-top__logo logo" href="#"><img class="logo__img" src="./img/logo.png" alt="Logo"></a>
+
+                    <nav class="header-top__nav-bar nav-bar">
+                        <ul class="nav-bar__menu menu d-flex">
+                            <li class="menu__item"><a class="menu__link" href="#">Почему мы?</a></li>
+                            <li class="menu__item"><a class="menu__link" href="#">Номера</a></li>
+                            <li class="menu__item"><a class="menu__link" href="#">Отзывы</a></li>
+                            <li class="menu__item"><a class="menu__link" href="#">Как нас найти</a></li>
+                        </ul>
+                    </nav>
+
+                    <button class="btn menu__btn"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <header class="main__main-header main-header d-flex">
+                <h1 class="main-header__title">Наши номера</h1>
+
+                <div class="main-header__wrap d-flex">
+                    <div class="main-header__filter-search filter-search">
+                        <button class="filter-search__btn btn d-flex">
+                            <img class="filter-search__btn-img" src="./img/catalog/filter.svg" alt="Filter">
+                            <span class="filter-search__text">Фильтры</span>
+                        </button>
+                    </div>
+
+                    <div class="main-header__sort-cards sort-cards">
+                        <div class="sort-cards__current-filter current-filter d-flex">
+                            <img class="current-filter__btn-img current-filter__btn-img--leftSize" src="./img/catalog/arrow-up.svg" alt="Arrow">
+                            <span class="current-filter__text">По площади</span>
+                            <img class="current-filter__btn-img current-filter__btn-img--rightSize" src="./img/catalog/arrow-bottom.svg" alt="Arrow">
+                        </div>
+
+                        <div class="sort-cards__all-filter all-filter">
+                            <p class="all-filter__value d-flex" data-sort="Up Area">
+                                <img class="all-filter__value-img all-filter__value-img--up" src="./img/catalog/arrow-up.svg" alt="Arrow Up">
+                                <span class="all-filter__value-text">По площади</span>
+                            </p>
+                            <p class="all-filter__value d-flex" data-sort="Down Area">
+                                <img class="all-filter__value-img all-filter__value-img--down" src="./img/catalog/arrow-up.svg" alt="Arrow Down">
+                                <span class="all-filter__value-text">По площади</span>
+                            </p>
+                            <p class="all-filter__value d-flex" data-sort="Up Price">
+                                <img class="all-filter__value-img all-filter__value-img--up" src="./img/catalog/arrow-up.svg" alt="Arrow Up">
+                                <span class="all-filter__value-text">По цене</span>
+                            </p>
+                            <p class="all-filter__value d-flex" data-sort="Down Price">
+                                <img class="all-filter__value-img all-filter__value-img--down" src="./img/catalog/arrow-up.svg" alt="Arrow Down">
+                                <span class="all-filter__value-text">По цене</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="main__wrap d-flex">
+                <aside class="main__filter filter">
+                    <div class="filter__prise price">
+                        <h2 class="price__filter-title filter-title">Цена за сутки, <span>₽</span></h2>
+
+                        <div class="price__input-price input-price d-flex">
+                            <input type="text" class="input input-price__min-price" placeholder="от 100">
+                            <input type="text" class="input input-price__max-price" placeholder="до 600">
+                        </div>
+                    </div>
+
+                    <div class="filter__size-room size-room">
+                        <h2 class="size-room__filter-title filter-title">Площадь</h2>
+
+                        <div class="size-room__wrap d-flex">
+                            <div class="size-room__room-area room-area">
+                                <input type="checkbox" class="room-area__check" id="area-1">
+                                <label class="room-area__label" for="area-1" data-area-room="0.63" data-room-equipment="0">0,63 м<sup>2</sup></label>
+                            </div>
+
+                            <div class="size-room__room-area room-area">
+                                <input type="checkbox" class="room-area__check" id="area-2">
+                                <label class="room-area__label" for="area-2" data-area-room="0.90" data-room-equipment="1">0,90 м<sup>2</sup></label>
+                            </div>
+
+                            <div class="size-room__room-area room-area">
+                                <input type="checkbox" class="room-area__check" id="area-3">
+                                <label class="room-area__label" for="area-3" data-area-room="1.13" data-room-equipment="2">1,13 м<sup>2</sup></label>
+                            </div>
+
+                            <div class="size-room__room-area room-area">
+                                <input type="checkbox" class="room-area__check" id="area-4">
+                                <label class="room-area__label" for="area-4" data-area-room="1.56" data-room-equipment="3">1,56 м<sup>2</sup></label>
+                            </div>
+
+                            <div class="size-room__room-area room-area">
+                                <input type="checkbox" class="room-area__check" id="area-5">
+                                <label class="room-area__label" for="area-5" data-area-room="2.56" data-room-equipment="4">2,56 м<sup>2</sup></label>
+                            </div>
+
+                            <div class="size-room__room-area size-room__room-area--mb room-area">
+                                <input type="checkbox" class="room-area__check" id="area-6">
+                                <label class="room-area__label" for="area-6" data-area-room="2.88" data-room-equipment="5">2,88 м<sup>2</sup></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter__room-equipment room-equipment">
+                        <h2 class="room-equipment__filter-title filter-title">Оснащение номера</h2>
+
+                        <div class="room-equipment__wrap d-flex">
+                            <div class="room-equipment__wrapper">
+                                <input type="checkbox" class="room-equipment__furniture" id="furniture-1">
+                                <label class="room-equipment__label" for="furniture-1" data-room-equipment="0">Пустой номер</label>
+                            </div>
+
+                            <div class="room-equipment__wrapper">
+                                <input type="checkbox" class="room-equipment__furniture" id="furniture-2">
+                                <label class="room-equipment__label" for="furniture-2" data-room-equipment="1">Лежак</label>
+                            </div>
+
+                            <div class="room-equipment__wrapper">
+                                <input type="checkbox" class="room-equipment__furniture" id="furniture-3">
+                                <label class="room-equipment__label" for="furniture-3" data-room-equipment="2">Когтеточка</label>
+                            </div>
+
+                            <div class="room-equipment__wrapper">
+                                <input type="checkbox" class="room-equipment__furniture" id="furniture-4">
+                                <label class="room-equipment__label" for="furniture-4" data-room-equipment="3">Игровой-комплекс</label>
+                            </div>
+
+                            <div class="room-equipment__wrapper room-equipment__wrapper--mb">
+                                <input type="checkbox" class="room-equipment__furniture" id="furniture-5">
+                                <label class="room-equipment__label" for="furniture-5" data-room-equipment="4">Домик</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn filter__btn-apply">Применить</button>
+                    <button class="btn filter__btn-reset">Сбросить фильтр</button>
+
+                    <button class="btn filter__btn-close"></button>
+                </aside>
+
+                <section class="main__main-content main-content d-flex">
+                    <div class="main-content__card-room card-room" data-area-room="0.63" data-room-equipment="0" data-price="100">
+                        <img class="card-room__img" src="./img/catalog/01.jpg" alt="Cat Room">
+
+                        <h3 class="card-room__title">Эконом</h3>
+
+                        <p class="card-room__size">Размеры (ШхГхВ) - 90х70х180 см</p>
+                        <p class="card-room__area">Площадь - 0,63 м<sup>2</sup></p>
+
+                        <div class="card-room__room-equipment room-equipment d-flex">
+                            <p class="room-equipment__text">Оснащение номера</p>
+
+                            <div class="room-equipment__empty-number empty-number">
+                                <img class="empty-number__img" src="./img/catalog/equipment/none.svg" alt="Пустой номер">
+                                <p class="empty-number__text">Пустой&nbsp;номер</p>
+                            </div>
+                        </div>
+
+                        <p class="card-room__price">Цена за сутки:<span>100₽</span></p>
+
+                        <button class="btn card-room__btn d-flex">
+                            <span>Забронировать</span>
+                            <img class="card-room__btn-img" src="./img/catalog/btn-icon.png" alt="Cat`s Foot">
+                        </button>
+                    </div>
+
+                    <div class="main-content__card-room card-room" data-area-room="0.90" data-room-equipment="1,2" data-price="200">
+                        <img class="card-room__img" src="./img/catalog/02.jpg" alt="Cat Room">
+
+                        <h3 class="card-room__title">Эконом плюс</h3>
+
+                        <p class="card-room__size">Размеры (ШхГхВ) - 90х100х180 см</p>
+                        <p class="card-room__area">Площадь - 0,90 м<sup>2</sup></p>
+
+                        <div class="card-room__room-equipment room-equipment d-flex">
+                            <p class="room-equipment__text">Оснащение номера</p>
+
+                            <div class="room-equipment__sunbed sunbed">
+                                <img class="sunbed__img" src="./img/catalog/equipment/bed.svg" alt="Лежак">
+                                <p class="sunbed__text">Лежак</p>
+                            </div>
+
+                            <div class="room-equipment__scratching-post scratching-post">
+                                <img class="scratching-post__img" src="./img/catalog/equipment/game-complex.svg" alt="Когтеточка">
+                                <p class="scratching-post__text">Когтеточка</p>
+                            </div>
+                        </div>
+
+                        <p class="card-room__price">Цена за сутки:<span>200₽</span></p>
+
+                        <button class="btn card-room__btn d-flex">
+                            <span>Забронировать</span>
+                            <img class="card-room__btn-img" src="./img/catalog/btn-icon.png" alt="Cat`s Foot">
+                        </button>
+                    </div>
+
+                    <div class="main-content__card-room card-room" data-area-room="1.13" data-room-equipment="1,2,3" data-price="250">
+                        <img class="card-room__img" src="./img/catalog/03.jpg" alt="Cat Room">
+
+                        <h3 class="card-room__title">Комфорт</h3>
+
+                        <p class="card-room__size">Размеры (ШхГхВ) - 100х125х180 см</p>
+                        <p class="card-room__area">Площадь - 1,13 м2</p>
+
+                        <div class="card-room__room-equipment room-equipment d-flex">
+                            <p class="room-equipment__text">Оснащение номера</p>
+
+                            <div class="room-equipment__sunbed sunbed">
+                                <img class="sunbed__img" src="./img/catalog/equipment/bed.svg" alt="Лежак">
+                                <p class="sunbed__text">Лежак</p>
+                            </div>
+
+                            <div class="room-equipment__scratching-post scratching-post">
+                                <img class="scratching-post__img" src="./img/catalog/equipment/game-complex.svg" alt="Когтеточка">
+                                <p class="scratching-post__text">Когтеточка</p>
+                            </div>
+
+                            <div class="room-equipment__game-complex game-complex">
+                                <img class="game-complex__img" src="./img/catalog/equipment/toys.svg" alt="Игровой комплекс">
+                                <p class="game-complex__text">Игровой&nbsp;комплекс</p>
+                            </div>
+                        </div>
+
+                        <p class="card-room__price">Цена за сутки:<span>250₽</span></p>
+
+                        <button class="btn card-room__btn d-flex">
+                            <span>Забронировать</span>
+                            <img class="card-room__btn-img" src="./img/catalog/btn-icon.png" alt="Cat`s Foot">
+                        </button>
+                    </div>
+
+                    <div class="main-content__card-room card-room" data-area-room="1.56" data-room-equipment="1,2,3" data-price="350">
+                        <img class="card-room__img" src="./img/catalog/04.jpg" alt="Cat Room">
+
+                        <h3 class="card-room__title">Сьют</h3>
+
+                        <p class="card-room__size">Размеры (ШхГхВ) - 125х125х180 см</p>
+                        <p class="card-room__area">Площадь - 1,56 м2</p>
+
+                        <div class="card-room__room-equipment room-equipment d-flex">
+                            <p class="room-equipment__text">Оснащение номера</p>
+
+                            <div class="room-equipment__sunbed sunbed">
+                                <img class="sunbed__img" src="./img/catalog/equipment/bed.svg" alt="Лежак">
+                                <p class="sunbed__text">Лежак</p>
+                            </div>
+
+                            <div class="room-equipment__scratching-post scratching-post">
+                                <img class="scratching-post__img" src="./img/catalog/equipment/game-complex.svg" alt="Когтеточка">
+                                <p class="scratching-post__text">Когтеточка</p>
+                            </div>
+
+                            <div class="room-equipment__game-complex game-complex">
+                                <img class="game-complex__img" src="./img/catalog/equipment/toys.svg" alt="Игровой комплекс">
+                                <p class="game-complex__text">Игровой&nbsp;комплекс</p>
+                            </div>
+                        </div>
+
+                        <p class="card-room__price">Цена за сутки:<span>350₽</span></p>
+
+                        <button class="btn card-room__btn d-flex">
+                            <span>Забронировать</span>
+                            <img class="card-room__btn-img" src="./img/catalog/btn-icon.png" alt="Cat`s Foot">
+                        </button>
+                    </div>
+
+                    <div class="main-content__card-room card-room" data-area-room="2.56" data-room-equipment="1,2,3,4" data-price="500">
+                        <img class="card-room__img" src="./img/catalog/05.jpg" alt="Cat Room">
+
+                        <h3 class="card-room__title">Люкс</h3>
+
+                        <p class="card-room__size">Размеры (ШхГхВ) - 160х160х180 см</p>
+                        <p class="card-room__area">Площадь - 2,56 м<sup>2</sup></p>
+
+                        <div class="card-room__room-equipment room-equipment d-flex">
+                            <p class="room-equipment__text">Оснащение номера</p>
+
+                            <div class="room-equipment__sunbed sunbed">
+                                <img class="sunbed__img" src="./img/catalog/equipment/bed.svg" alt="Лежак">
+                                <p class="sunbed__text">Лежак</p>
+                            </div>
+
+                            <div class="room-equipment__scratching-post scratching-post">
+                                <img class="scratching-post__img" src="./img/catalog/equipment/game-complex.svg" alt="Когтеточка">
+                                <p class="scratching-post__text">Когтеточка</p>
+                            </div>
+
+                            <div class="room-equipment__game-complex game-complex">
+                                <img class="game-complex__img" src="./img/catalog/equipment/toys.svg" alt="Игровой комплекс">
+                                <p class="game-complex__text">Игровой&nbsp;комплекс</p>
+                            </div>
+
+                            <div class="room-equipment__home home">
+                                <img class="home__img" src="./img/catalog/equipment/home.svg" alt="Домик">
+                                <p class="home__text">Домик</p>
+                            </div>
+                        </div>
+
+                        <p class="card-room__price">Цена за сутки:<span>500₽</span></p>
+
+                        <button class="btn card-room__btn d-flex">
+                            <span>Забронировать</span>
+                            <img class="card-room__btn-img" src="./img/catalog/btn-icon.png" alt="Cat`s Foot">
+                        </button>
+                    </div>
+
+                    <div class="main-content__card-room card-room" data-area-room="2.88" data-room-equipment="1,2,3,4" data-price="600">
+                        <img class="card-room__img" src="./img/catalog/06.jpg" alt="Cat Room">
+
+                        <h3 class="card-room__title">Супер-Люкс</h3>
+
+                        <p class="card-room__size">Размеры (ШхГхВ) - 180х160х180 см</p>
+                        <p class="card-room__area">Площадь - 2,88 м2</p>
+
+                        <div class="card-room__room-equipment room-equipment d-flex">
+                            <p class="room-equipment__text">Оснащение номера</p>
+
+                            <div class="room-equipment__sunbed sunbed">
+                                <img class="sunbed__img" src="./img/catalog/equipment/bed.svg" alt="Лежак">
+                                <p class="sunbed__text">Лежак</p>
+                            </div>
+
+                            <div class="room-equipment__scratching-post scratching-post">
+                                <img class="scratching-post__img" src="./img/catalog/equipment/game-complex.svg" alt="Когтеточка">
+                                <p class="scratching-post__text">Когтеточка</p>
+                            </div>
+
+                            <div class="room-equipment__game-complex game-complex">
+                                <img class="game-complex__img" src="./img/catalog/equipment/toys.svg" alt="Игровой комплекс">
+                                <p class="game-complex__text">Игровой&nbsp;комплекс</p>
+                            </div>
+
+                            <div class="room-equipment__home home">
+                                <img class="home__img" src="./img/catalog/equipment/home.svg" alt="Домик">
+                                <p class="home__text">Домик</p>
+                            </div>
+                        </div>
+
+                        <p class="card-room__price">Цена за сутки:<span>600₽</span></p>
+
+                        <button class="btn card-room__btn d-flex">
+                            <span>Забронировать</span>
+                            <img class="card-room__btn-img" src="./img/catalog/btn-icon.png" alt="Cat`s Foot">
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <section class="section-stock">
+        <div class="container">
+            <div class="section-stock__stock stock">
+                <h2 class="stock__title"><span class="stock__title-small">Каждый&nbsp;7&nbsp;-&nbsp;й&nbsp;день</span> бесплатно!</h2>
+                <p class="stock__subtitle">Акция действует при размещении в&nbsp;номерах “Люкс” и “Супер-Люкс” </p>
+
+                <button class="stock__btn btn d-flex">
+                    <span>Забронировать</span>
+                    <img src="./img/header/btn-icon.png" alt="Paw">
+                </button>
+
+                <img class="stock__img" src="./img/stock/paw.png" alt="Paw">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-address">
+        <div class="section-address__address address d-flex">
+            <div class="address__location location">
+                <h2 class="location__title">Как нас найти</h2>
+
+                <h3 class="location__subtitle">Адрес</h3>
+                <p class="location__address">Санкт-Петербург, ул&nbsp;Большая&nbsp;Конюшенная,&nbsp;д&nbsp;19</p>
+
+                <h3 class="location__subtitle">Режим работы</h3>
+                <p class="location__work-mode">Ежедневно, с 9:00 до 20:00</p>
+
+                <h3 class="location__subtitle">Телефон</h3>
+                <a class="location__phone" href="tel:8(800)333-55-99">8 (800) 333-55-99</a>
+
+                <h3 class="location__subtitle">E-mail</h3>
+                <a class="location__email" href="mailto:info@cat-hotel.ru">info@cat-hotel.ru</a>
+
+                <h3 class="location__subtitle">Социальные сети</h3>
+                <div class="location__social social d-flex">
+                    <a class="social__link" href="https://www.facebook.com/"><img class="social__img" src="./img/Social/facebook.svg" alt="Facebook"></a>
+                    <a class="social__link" href="https://www.instagram.com/"><img class="social__img" src="./img/Social/instagram.svg" alt="Instagram"></a>
+                    <a class="social__link social__link--mr" href="https://vk.com/"><img class="social__img" src="./img/Social/vk.svg" alt="Vk"></a>
+                </div>
+            </div>
+
+            <div class="address__map map">
+                <div class="ymap-container">
+                    <div class="loader loader-default"></div>
+                    <div id="map-yandex" style="width: 100%; height: 654px"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__footer-top footer-top">
+            <div class="container">
+                <div class="footer-top__wrap d-flex">
+                    <a class="footer-top__logo logo" href="#"><img class="logo__img" src="./img/logo.png" alt="Logo"></a>
+
+                    <nav class="footer-top__nav-bar nav-bar">
+                        <ul class="nav-bar__menu menu d-flex">
+                            <li class="menu__item"><a class="menu__link" href="#">Почему мы?</a></li>
+                            <li class="menu__item"><a class="menu__link" href="#">Номера</a></li>
+                            <li class="menu__item menu__item--mb"><a class="menu__link" href="#">Отзывы</a></li>
+                            <li class="menu__item menu__item--mb"><a class="menu__link" href="#">Как нас найти</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="footer__footer-bottom footer-bottom">
+            <div class="container">
+                <div class="footer-bottom__wrap d-flex">
+                    <p class="footer-bottom__copy copy">&copy; 2020 Все права защищены</p>
+                    <a class="footer-bottom__policy policy" href="#">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-menu">
+        <ul class="mobile-menu__small-menu small-menu d-flex">
+            <li class="small-menu__item"><a class="small-menu__link" href="#">Почему мы?</a></li>
+            <li class="small-menu__item"><a class="small-menu__link" href="#">Номера</a></li>
+            <li class="small-menu__item"><a class="small-menu__link" href="#">Отзывы</a></li>
+            <li class="small-menu__item"><a class="small-menu__link" href="#">Как нас найти</a></li>
+        </ul>
+
+        <a class="mobile-menu__phone" href="tel:8(800)333-55-99">8 (800) 333-55-99</a>
+
+        <div class="mobile-menu__menu-social menu-social">
+            <a class="menu-social__link" href="https://www.facebook.com/"><img class="menu-social__img" src="./img/Social/facebook.svg" alt="Facebook"></a>
+            <a class="menu-social__link" href="https://www.instagram.com/"><img class="menu-social__img" src="./img/Social/instagram.svg" alt="Instagram"></a>
+            <a class="menu-social__link" href="https://vk.com/"><img class="menu-social__img" src="./img/Social/vk.svg" alt="Vk"></a>
+        </div>
+    </div>
+
+    <div class="modal-reserve d-flex">
+        <div class="modal-reserve__modal-content modal-content">
+            <img class="modal-content__img" src="./img/modal/paw.png" alt="Paw">
+
+            <button class="modal-content__btn-close btn-close btn"><img class="btn-close__img" src="./img/modal/close.svg" alt="Close"></button>
+
+            <h2 class="modal-content__title">Забронировать номер</h2>
+
+            <form class="modal-content__form form" action="#">
+                <div class="input-wrap"><input class="form__input input" type="text" name="name" placeholder="Ваше имя"></div>
+                <div class="input-wrap"><input class="form__input input" type="text" name="nameCat" placeholder="Имя Питомца"></div>
+                <div class="input-wrap"><input class="form__input input" type="tel" name="phone" placeholder="Телефон"></div>
+                <div class="input-wrap"><input class="form__input input" type="email" name="email" placeholder="E-mail"></div>
+
+                <div class="form__date date d-flex">
+                    <p class="date__title">Дата заезда</p>
+                    <div class="date__wrap d-flex">
+                        <span class="date__text">с</span>
+                        <div class="input-wrap"><input class="date__input input" type="text" name="withDate" placeholder="26.01.2020"></div>
+
+                        <span class="date__text">по</span>
+                        <div class="input-wrap"><input class="date__input input" type="text" name="beforeDate" placeholder="26.01.2020"></div>
+                    </div>
+                </div>
+
+                <button class="form__btn btn d-flex"><span>Отправить заявку</span><img src="./img/paw-reverse.svg" alt="Paw"></button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="modal-status d-flex">
+        <div class="modal-status__status-content status-content d-flex">
+            <button class="status-content__btn-close btn-close btn"><img class="btn-close__img" src="./img/modal/close.svg" alt="Close"></button>
+
+            <h2 class="status-content__title">Спасибо за заявку!</h2>
+            <p class="status-content__text">Мы свяжемся с вами в ближайшее время</p>
+
+            <button class="status-content__btn btn d-flex"><span>Ок</span><img src="./img/paw-reverse.svg" alt="Paw"></button>
+
+            <img class="status-content__img" src="./img/modal/paw.png" alt="Paw">
+        </div>
+    </div>
+
+    <div class="modal-filter"></div>
+
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/map.js"></script>
+</body>
+</html>

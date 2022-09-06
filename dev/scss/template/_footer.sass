@@ -1,0 +1,96 @@
+$header-text: #1A212F
+
+.footer
+  &-top
+    &__wrap
+      justify-content: space-between
+      align-items: center
+      padding: 12px 0
+
+  &-bottom
+    &__wrap
+      justify-content: space-between
+  &__footer-bottom
+    margin-bottom: 20px
+
+.menu
+  list-style: none
+  &__item
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+  &__link
+    position: relative
+    @include font(16px, 600)
+    text-decoration: none
+    color: $header-text
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -1px
+      width: 0
+      height: 1px
+      background: $header-text
+      transition: width 0.4s ease-in
+    &:hover:after
+      @media (min-width: 993px)
+        width: 100%
+
+.line
+  width: 100%
+  height: 1px
+  margin-bottom: 20px
+  background: #EFEFEF
+
+.copy, .policy
+  @include font(12px, normal)
+  text-decoration: none
+  color: #8F8F8F
+
+
+@media (max-width: 576px)
+  .footer
+    &-top
+      &__wrap
+        flex-direction: column
+        padding: 30px 0
+      &__logo
+        margin-right: auto
+        margin-bottom: 25px
+
+    &__footer-bottom
+      margin-bottom: 30px
+
+  .logo
+    &__img
+      max-width: 45px
+
+  .menu
+    flex-direction: row
+    justify-content: space-between
+    width: 450px
+    &__item
+      padding: 0
+      margin: 0
+      &:first-of-type
+        padding: 0
+      &:last-of-type
+        padding: 0
+
+@media (max-width: 450px)
+  .footer-bottom
+    &__wrap
+      flex-direction: column
+
+  .menu
+    flex-wrap: wrap
+    width: 100%
+    &__item
+      width: 50%
+      margin-bottom: 20px
+      &--mb
+        margin-bottom: 0
+
+  .copy
+    margin-bottom: 20px

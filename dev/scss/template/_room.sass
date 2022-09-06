@@ -1,0 +1,229 @@
+.section-room
+  position: relative
+  &__img
+    position: absolute
+    top: -70px
+    right: 0
+  &__room
+    margin: 70px 0  140px 0
+
+.room
+  &__slider-photo
+    margin-right: 70px
+
+
+.left-part
+  flex-direction: column
+  &__wrap-img
+    position: relative
+    width: 70px
+    height: 112px
+    margin-bottom: 30px
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 2
+      width: 100%
+      height: 100%
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))
+    &:last-of-type
+      margin-bottom: 0
+    &:hover
+      @media (min-width: 992px)
+        cursor: pointer
+  &__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    border-radius: 4px
+
+.slider-photo
+  &__left-part
+    margin-right: 30px
+
+
+.right-part
+  max-width: 500px
+  max-height: 396px
+  &__img
+    width: 100%
+    height: 100%
+    border-radius: 8px
+    object-fit: cover
+
+
+.slider-content
+  &__title
+    margin-bottom: 30px
+    @include font(36px, bold, Rubik)
+    color: $hotel-text
+  &__size
+    margin-bottom: 20px
+    @include font(16px, normal)
+    color: $hotel-text
+  &__square
+    margin-bottom: 20px
+    @include font(16px, normal)
+    color: $hotel-text
+  &__equipment
+    margin-bottom: 15px
+    @include font(16px, normal)
+    color: $hotel-text
+  &__equipment-room
+    margin-bottom: 12px
+    &:last-of-type
+      margin-bottom: 20px
+  &__price
+    margin-bottom: 20px
+    @include font(16px, normal)
+    color: $hotel-text
+    & span
+      margin-left: 12px
+      @include font(18px, 500)
+  &__btn
+    align-items: center
+    max-width: 205px
+    padding: 7px 7px 7px 30px
+    @include font(16px, 600)
+    border-radius: 25px
+    color: #FFFEFD
+    background: #FF7236
+    box-shadow: 0 5px 25px rgba(26, 33, 47, 0.1)
+  &__btn-text
+    margin-right: 20px
+
+
+.equipment-room
+  align-items: center
+  &__img
+    width: 16px
+    height: 16px
+    margin-right: 8px
+  &__text
+    @include font(16px, normal)
+    color: $hotel-text
+
+
+@media (max-width: 1200px)
+  .section-room
+    &__img
+      max-width: 170px
+
+@media (max-width: 992px)
+  .section-room
+    &__img
+      display: none
+    &__room
+      margin: 60px 0  120px 0
+
+  .room__slider-photo
+    margin-right: 60px
+
+  .slider-photo
+    flex-direction: column
+    &__left-part
+      margin-right: 0
+    &__right-part
+      margin-bottom: 20px
+
+  .left-part
+    flex-direction: row
+    order: 1
+    &__wrap-img
+      width: 104px
+      height: 78px
+      margin-bottom: 0
+      margin-right: 20px
+      &:last-of-type
+        margin-right: 0
+    &__img
+      width: 104px
+      height: 78px
+      object-fit: cover
+
+  .right-part
+    max-width: 354px
+    height: 280px
+
+  .slider-content
+    &__size, &__square, &__equipment, &__price
+      font-size: 15px
+    &__size
+      margin-bottom: 15px
+    &__square
+      margin-bottom: 15px
+    &__equipment
+      margin-bottom: 10px
+    &__equipment-room
+      margin-bottom: 13px
+
+  .equipment-room__text
+    font-size: 15px
+
+@media (max-width: 768px)
+  .room__slider-photo
+    margin-right: 30px
+
+  .left-part
+    &__wrap-img
+      width: 86px
+      height: 64px
+      margin-right: 15px
+    &__img
+      width: 86px
+      height: 64px
+
+  .right-part
+    max-width: 290px
+
+  .slider-content
+    &__title
+      margin-bottom: 15px
+      font-size: 28px
+    &__size
+      margin-bottom: 10px
+    &__square
+      margin-bottom: 10px
+    &__equipment
+      margin-bottom: 10px
+    &__equipment-room
+      margin-bottom: 7px
+      &:last-of-type
+        margin-bottom: 15px
+    &__price
+      margin-bottom: 15px
+
+@media (max-width: 576px)
+  .section-room
+    &__room
+      margin: 40px 0  60px 0
+
+  .room
+    flex-direction: column
+    align-items: center
+    &__slider-photo
+      margin-right: 0
+      margin-bottom: 40px
+
+  .slider-content
+    &__title
+      margin-bottom: 25px
+    &__size
+      margin-bottom: 15px
+    &__square
+      margin-bottom: 15px
+    &__equipment
+      margin-bottom: 15px
+    &__equipment-room
+      margin-bottom: 10px
+      &:last-of-type
+        margin-bottom: 20px
+    &__price
+      margin-bottom: 20px
+    &__btn
+      max-width: 290px
+      padding-left: 76px
+    &__btn-text
+      margin-right: 60px

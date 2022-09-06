@@ -1,0 +1,131 @@
+$reviews-text: #1A212F
+
+.section-reviews
+  overflow-x: hidden
+  &__reviews
+    padding: 0 0 150px 0
+
+.reviews
+  &__title
+    margin-bottom: 70px
+    @include font(36px, bold, 'Rubik')
+    text-align: center
+    color: $reviews-text
+  &__reviews-nav
+    margin-left: auto
+    margin-top: 45px
+
+.feedback-container
+  &__feedback
+    margin-right: 30px
+    padding: 35px 35px 35px 70px
+
+.feedback
+  min-width: 470px
+  background: #FFFFFF
+  box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25)
+  border-radius: 8px
+  &__text
+    position: relative
+    margin-bottom: 25px
+    @include font(16px, 500)
+    line-height: 140%
+    color: $reviews-text
+    &:before
+      content: '“'
+      position: absolute
+      top: 25px
+      left: -31px
+      @include font(72px, 500)
+      color: #FAC663
+
+.contact
+  justify-content: space-between
+  &__name
+    @include font(14px, normal)
+    color: #848484
+  &__time
+    @include font(14px, normal)
+    color: #848484
+
+.reviews-nav
+  align-items: center
+  justify-content: space-between
+  max-width: 600px
+  &__reviews-btn
+    margin-right: 75px
+
+.dots-reviews
+  display: flex
+  &__btn
+    width: 12px
+    height: 12px
+    margin-right: 12px
+    border-radius: 50%
+    background: #E1E1E1
+    &--active
+      background: #FAC663
+
+
+@media (max-width: 1200px)
+  .reviews-nav
+    &__reviews-btn
+      margin-right: 15px
+
+@media (max-width: 992px)
+  .section-reviews
+    &__reviews
+      padding: 0 0 120px 0
+
+  .reviews
+    &__title
+      margin-bottom: 60px
+    &-nav
+      justify-content: center
+      max-width: inherit
+    &-btn
+      display: none
+
+  .feedback
+    &__text
+      font-size: 15px
+
+@media (max-width: 576px)
+  .section-reviews
+    &__reviews
+      padding: 0 0 70px 0
+
+  .reviews
+    &__title
+      margin-bottom: 40px
+      font-size: 28px
+    &__reviews-nav
+      margin-top: 30px
+
+  .feedback
+    min-width: 450px
+    opacity: 0
+    &__text
+      &:before
+        top: 18px
+        left: -28px
+        font-size: 54px
+    &--active
+      opacity: 1
+
+  .feedback-container
+    &__feedback
+      margin-right: 0
+      padding: 25px 20px 25px 55px
+
+@media (max-width: 450px)
+  .feedback
+    min-width: 320px
+
+  .contact
+    &__name, &__time
+      font-size: 12px
+
+@media (max-width: 320px)
+  .feedback
+    min-width: 290px

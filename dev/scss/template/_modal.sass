@@ -1,0 +1,28 @@
+@import "modal/modal-reserve"
+@import "modal/modal-status"
+
+.modal-active
+  display: flex
+
+input
+  &:focus
+    border: 1px solid orange
+    outline: 0
+
+.input-wrap
+  position: relative
+
+.invalid
+  border: 1px solid red !important
+
+.error
+  position: absolute
+  right: 20px
+  bottom: 20px
+  @include font(14px, 300)
+  font-style: italic
+  color: red
+
+.date__input + .error
+  right: 15px
+  bottom: -16px

@@ -1,0 +1,100 @@
+$stock-text: #1A212F
+
+.section-stock
+  &__stock
+    position: relative
+
+    margin-bottom: 140px
+    padding: 60px 0 60px 270px
+
+.stock
+  background: url('./../img/stock/stock-bg.jpg') no-repeat
+  border-radius: 10px
+  &__title
+    max-width: 320px
+    margin-bottom: 20px
+    @include font(54px, bold, Rubik)
+    color: $stock-text
+  &__title-small
+    @include font(34px, bold, Rubik)
+  &__subtitle
+    max-width: 255px
+    margin-bottom: 30px
+    @include font(16px, normal)
+    color: $stock-text
+  &__btn
+    align-items: center
+    max-width: 205px
+    padding: 7px 7px 7px 30px
+    @include font(16px, 600)
+    border-radius: 25px
+    color: $header-text
+    background: #ffffff
+    transition: border 0.5s linear
+    & span
+      margin-right: 20px
+
+  &__img
+    position: absolute
+    top: 0
+    left: 0
+
+
+@media (max-width: 1200px)
+  .section-stock
+    &__stock
+      padding-left: 220px
+
+  .stock
+    background-position: 70%
+    &__img
+      width: 200px
+
+@media (max-width: 992px)
+  .section-stock
+    &__stock
+      padding: 70px 0 70px 100px
+      margin-bottom: 120px
+
+  .stock
+    background: url('./../img/stock/stock-bg-md.jpg') no-repeat center / cover
+    &__subtitle
+      font-size: 15px
+    &__img
+      width: 150px
+
+@media (max-width: 768px)
+  .section-stock
+    &__stock
+      padding: 70px 0 70px 75px
+
+  .stock
+    background-position-x: 75%
+    &__title
+      font-size: 38px
+    &__title-small
+      font-size: 24px
+    &__subtitle
+      font-size: 15px
+    &__img
+      width: 120px
+
+@media (max-width: 576px)
+  .section-stock
+    &__stock
+      margin: 0 auto 70px
+      padding: 50px 25px 260px 25px
+
+  .stock
+    width: 320px
+    background: url('./../img/stock/stock-bg-small.jpg') no-repeat center / cover
+    &__title, &__subtitle
+      text-align: center
+    &__btn
+      margin: 0 auto
+    &__img
+      width: 90px
+
+@media (max-width: 320px)
+  .stock
+    width: 290px

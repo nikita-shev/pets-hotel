@@ -1,0 +1,189 @@
+$aside-text: #1A212F
+
+
+.filter
+  max-width: 210px
+  &-title
+    @include font(16px, 500)
+    color: $aside-text
+    & span
+      @include font(14px, normal)
+
+  &__prise
+    margin-bottom: 35px
+  &__size-room
+    margin-bottom: 35px
+  &__room-equipment
+    margin-bottom: 35px
+
+
+.price
+  &__filter-title
+    margin-bottom: 20px
+
+.input
+  padding: 7px 0 7px 5px
+  @include font(14px, normal)
+  color: $aside-text
+  &-price
+    &__min-price
+      max-width: 100px
+      margin-right: 10px
+    &__max-price
+      max-width: 100px
+
+
+
+.size-room
+  &__filter-title
+    margin-bottom: 20px
+  &__wrap
+    flex-direction: column
+  &__room-area
+    margin-bottom: 15px
+    &--mb
+      margin-bottom: 0 !important
+
+.room-area
+  &__check
+    position: absolute
+    z-index: -1
+    opacity: 0
+  &__label
+    @include font(14px, normal)
+    color: $aside-text
+  &__check + label
+    display: inline-flex
+    align-items: center
+    user-select: none
+    cursor: pointer
+  &__check + label::before
+    content: ''
+    width: 20px
+    height: 20px
+    margin-right: 10px
+    border: 1px solid #E1E1E1
+  &__check:checked + label
+    background: url('./../img/check.svg') no-repeat 7% 50%
+
+
+
+.room-equipment
+  &__filter-title
+    margin-bottom: 20px
+  &__wrap
+    flex-direction: column
+  &__wrapper
+    margin-bottom: 15px
+    &--mb
+      margin-bottom: 0 !important
+
+  &__furniture
+    position: absolute
+    z-index: -1
+    opacity: 0
+  &__label
+    width: 100%
+    @include font(14px, normal)
+    color: $aside-text
+  &__furniture + label
+    display: inline-flex
+    align-items: center
+    user-select: none
+    cursor: pointer
+  &__furniture + label::before
+    content: ''
+    width: 20px
+    height: 20px
+    margin-right: 10px
+    border: 1px solid #E1E1E1
+  &__furniture:checked + label
+    background: url('./../img/check.svg') no-repeat 2.5% 50%
+
+
+
+
+.modal-filter
+  position: fixed
+  left: 0
+  top: 0
+  z-index: 3
+  display: none
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100%
+
+.filter-active
+  display: flex !important
+  background: rgba(255, 254, 253, 0.8)
+  backdrop-filter: blur(8px)
+
+.content-active
+  display: block !important
+  background: #FFFEFD
+  box-shadow: 0 4px 25px rgba(153, 153, 153, 0.25)
+  border-radius: 6px
+
+
+.filter
+  &__btn-apply
+    //display: none
+    max-width: 185px
+    padding: 15px 56px
+    margin-bottom: 15px
+    @include font(14px, 600)
+    box-sizing: border-box
+    border-radius: 25px
+    background: #FAC663
+  &__btn-reset
+    max-width: 185px
+    padding: 15px 34px
+    @include font(14px, 600)
+    border: 2px solid #FAC663
+    box-sizing: border-box
+    border-radius: 25px
+    &--active
+      display: block
+  &__btn-close
+    display: none
+
+@media (max-width: 992px)
+  .filter
+    display: none
+
+  .main__filter
+    position: relative
+    max-width: 330px
+    padding: 40px 60px
+
+  .price__filter-title, .size-room__filter-title, .room-equipment__filter-title
+    margin-bottom: 15px
+
+  .filter__prise, .filter__size-room, .filter__room-equipment
+    margin-bottom: 25px
+
+  .size-room__room-area, .room-equipment__wrapper
+    margin-bottom: 10px
+
+  .filter__btn-close
+    position: absolute
+    top: 15px
+    right: 15px
+    display: block
+    width: 14px
+    height: 14px
+    background: url('./../img/catalog/close.svg') no-repeat center / cover
+
+@media (max-width: 576px)
+  .main__filter
+    max-width: 290px
+    padding: 50px 25px
+
+  .filter
+    &__btn-apply
+      max-width: 240px
+      padding: 15px 83px
+    &__btn-reset
+      max-width: 240px
+      padding: 15px 61px
